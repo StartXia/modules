@@ -13,5 +13,7 @@ public class HelloWorldController {
         for (int i = 0; i < 10; i++) {
             System.out.println(i);
         }
+        System.out.println("第三次上传");
+        System.out.println("第二次上传");
     }
 }
