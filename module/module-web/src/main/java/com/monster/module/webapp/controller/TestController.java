@@ -14,5 +14,6 @@ public class TestController {
     
     public static void main(String[] args) {
         System.out.println("模拟了一个新增文件");
+        System.out.println("分支记录");
     }
 }
