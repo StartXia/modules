@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.monster</groupId>
+    <artifactId>module</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>module-web</artifactId>
+  <packaging>war</packaging>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+  <!-- 
+  	参考地址：https://www.eclipse.org/jetty/documentation/9.4.x/jetty-maven-plugin.html#jetty-run-goal
+   -->
+  <build>
+  	<pluginManagement>
+  		<plugins>
+	  		<plugin>
+	 		 	<groupId>org.eclipse.jetty</groupId>
+	   		 	<artifactId>jetty-maven-plugin</artifactId>
+	   		 	<version>${jetty.version}</version>
+	   		 	<configuration>
+	   		 		<httpConnector>
+	   		 			<port>7090</port>
+	   		 		</httpConnector>
+	   		 		<webApp>
+	   		 			<contextPath>/module</contextPath>
+	   		 			<jettyEnvXml>${basedir}/src/main/webapp/WEB-INF/jetty-env.xml</jettyEnvXml>
+	   		 		</webApp>
+	   		 	</configuration>
+	  		</plugin>
+  		</plugins>
+  	</pluginManagement>
+  	
+    <finalName>module</finalName>
+  </build>
+</project>
